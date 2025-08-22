@@ -17,6 +17,6 @@ func _on_play_button_pressed() -> void:
 
 func _on_credits_button_pressed() -> void:
 	GlobalManager.audio_manager.play_game_click_sfx()
-	var credits_modal_instance = preload("res://scenes/CreditsModal.tscn").instantiate()
+	var credits_modal_instance = preload("res://scenes/modals/CreditsModal.tscn").instantiate()
 	add_child(credits_modal_instance)
 	credits_modal_instance.popup_centered()

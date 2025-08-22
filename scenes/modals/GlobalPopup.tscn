@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3hgi8jgotyjx"]
+
+[ext_resource type="Texture2D" uid="uid://mhdwwnyfwenu" path="res://assets/ui/botones/boton_rosa_selected.png" id="1_amuhs"]
+[ext_resource type="Texture2D" uid="uid://c4bupiq7wdio2" path="res://assets/ui/botones/boton_rosa_enable.png" id="2_3j82g"]
+[ext_resource type="LabelSettings" uid="uid://beemax7wyajc0" path="res://custom_resources/label_settings/main_menu_label_settings.tres" id="3_bv6gl"]
+
+[node name="GlobalModal" type="PopupPanel"]
+visible = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.709804, 0.87451, 0.937255, 0.929412)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 25.0
+offset_right = -10.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="ContentContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="ColorRect/VBoxContainer/ContentContainer"]
+layout_mode = 2
+
+[node name="CloseTextureButton" type="TextureButton" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture_normal = ExtResource("1_amuhs")
+texture_pressed = ExtResource("2_3j82g")
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/CloseTextureButton"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = -6.0
+offset_right = 183.0
+offset_bottom = 56.0
+text = "Cerrar"
+label_settings = ExtResource("3_bv6gl")

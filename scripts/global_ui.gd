@@ -8,9 +8,11 @@ var music_volume := 1.0
 var sfx_volume := 1.0
 
 func _ready():
+	print("ready")
 	build_controls()
 	
 func build_controls():
+	print(".. build controls")
 	# Lista de los elementos a agregar
 	var items_data = [
 		{ "name": "QuitButton",  "icon": "res://assets/ui/globals/logout.svg", "callback": func(): _on_quit_button_pressed(), "side": "left" },
@@ -44,10 +46,10 @@ func add_gap(width: int):
 	gap.custom_minimum_size = Vector2(width, 0)
 	control_container.add_child(gap)
 	
-func add_button(name: String, icon_path: String, callback: Callable):
-	var btn = create_button(name, icon_path, callback)
+func add_button(button_name: String, icon_path: String, callback: Callable):
+	var btn = create_button(button_name, icon_path, callback)
 	control_container.add_child(btn)
-	print("%s was added to scene" % name)
+	print("%s was added to scene" % button_name)
 
 func create_button(button_name: String, icon_path: String, callback: Callable) -> TextureButton:
 	var btn: TextureButton = UIButtonScene.instantiate()
@@ -59,18 +61,17 @@ func create_button(button_name: String, icon_path: String, callback: Callable) -
 	print("creating button")
 	return btn
 
-func heart_clic():
-	print("HEART WAS CLICKED")
-
 func _on_heart_button_pressed() -> void:
-	print("heart was pressed")
+	var credits_modal_instance = preload("res://scenes/modals/CreditsModal.tscn").instantiate()
+	add_child(credits_modal_instance)
+	credits_modal_instance.popup_centered()
 
 func _on_sound_button_pressed() -> void:
 	# Mostrar modal de opciones de sonido
 	#get_tree().paused = true
-	print("sound was pressed")
+	print("TO DO sound was pressed")
 	#$ModalMusica.show()
 
 func _on_quit_button_pressed() -> void:
 	#get_tree().quit()
-	print("quit was pressed")
+	print("TO DO quit was pressed")
