@@ -10,6 +10,11 @@ func _on_play_button_pressed() -> void:
 	#print("Game started")
 	GlobalManager.audio_manager.play_game_click_sfx()
 	GlobalManager.audio_manager.play_game_music()
+	
+		# Mostrar el corazón en la UI global
+	for node in get_tree().get_nodes_in_group("ui_layer"):
+		node.show_heart_button()
+	
 	get_tree().change_scene_to_file("res://scenes/Pantalla0_Inicio.tscn")
 
 #func _on_quit_button_pressed() -> void:
@@ -17,6 +22,6 @@ func _on_play_button_pressed() -> void:
 
 func _on_credits_button_pressed() -> void:
 	GlobalManager.audio_manager.play_game_click_sfx()
-	var credits_modal_instance = preload("res://scenes/CreditsModal.tscn").instantiate()
+	var credits_modal_instance = preload("res://scenes/modals/CreditsModal.tscn").instantiate()
 	add_child(credits_modal_instance)
 	credits_modal_instance.popup_centered()

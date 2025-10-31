@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://gqjie8x26xkb"]
 
-[ext_resource type="Script" uid="uid://dgfkuw5406c42" path="res://scripts/CreditsModal.gd" id="1_tshy2"]
-[ext_resource type="FontFile" uid="uid://d302wexnvwwsx" path="res://assets/fonts/Cherry_Bomb_One/Outfit/static/Outfit-Black.ttf" id="2_6fj7y"]
-[ext_resource type="FontFile" uid="uid://boe2oenoyudlq" path="res://assets/fonts/Cherry_Bomb_One/Outfit/static/Outfit-Medium.ttf" id="2_gr48d"]
-[ext_resource type="LabelSettings" uid="uid://beemax7wyajc0" path="res://tres/main_menu_label_settings.tres" id="2_xfrk5"]
-[ext_resource type="Texture2D" uid="uid://c4bupiq7wdio2" path="res://assets/ui/botones/boton_rosa_enable.png" id="3_6fj7y"]
-[ext_resource type="Texture2D" uid="uid://mhdwwnyfwenu" path="res://assets/ui/botones/boton_rosa_selected.png" id="4_gr48d"]
+[ext_resource type="Script" uid="uid://dgfkuw5406c42" path="res://scripts/CreditsModal.gd" id="1_ywila"]
+[ext_resource type="FontFile" uid="uid://boe2oenoyudlq" path="res://assets/fonts/Cherry_Bomb_One/Outfit/static/Outfit-Medium.ttf" id="2_q0ncl"]
+[ext_resource type="FontFile" uid="uid://d302wexnvwwsx" path="res://assets/fonts/Cherry_Bomb_One/Outfit/static/Outfit-Black.ttf" id="3_dvsja"]
+[ext_resource type="Texture2D" uid="uid://mhdwwnyfwenu" path="res://assets/ui/botones/boton_rosa_selected.png" id="4_wnajd"]
+[ext_resource type="Texture2D" uid="uid://c4bupiq7wdio2" path="res://assets/ui/botones/boton_rosa_enable.png" id="5_bnxhv"]
+[ext_resource type="LabelSettings" uid="uid://beemax7wyajc0" path="res://custom_resources/label_settings/main_menu_label_settings.tres" id="6_x4axm"]
 
 [node name="CreditsModal" type="PopupPanel"]
 position = Vector2i(309, 100)
@@ -13,7 +13,7 @@ size = Vector2i(640, 550)
 visible = true
 exclusive = true
 min_size = Vector2i(600, 500)
-script = ExtResource("1_tshy2")
+script = ExtResource("1_ywila")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -57,8 +57,8 @@ size_flags_vertical = 3
 layout_mode = 2
 theme_override_colors/default_color = Color(0.290196, 0.54902, 0.698039, 1)
 theme_override_constants/line_separation = 2
-theme_override_fonts/normal_font = ExtResource("2_gr48d")
-theme_override_fonts/bold_font = ExtResource("2_6fj7y")
+theme_override_fonts/normal_font = ExtResource("2_q0ncl")
+theme_override_fonts/bold_font = ExtResource("3_dvsja")
 theme_override_font_sizes/bold_italics_font_size = 18
 theme_override_font_sizes/italics_font_size = 18
 theme_override_font_sizes/mono_font_size = 22
@@ -72,8 +72,8 @@ scroll_active = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-texture_normal = ExtResource("4_gr48d")
-texture_pressed = ExtResource("3_6fj7y")
+texture_normal = ExtResource("4_wnajd")
+texture_pressed = ExtResource("5_bnxhv")
 
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/TextureButton"]
 layout_mode = 0
@@ -82,6 +82,6 @@ offset_top = -6.0
 offset_right = 183.0
 offset_bottom = 56.0
 text = "Cerrar"
-label_settings = ExtResource("2_xfrk5")
+label_settings = ExtResource("6_x4axm")
 
 [connection signal="pressed" from="ColorRect/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
