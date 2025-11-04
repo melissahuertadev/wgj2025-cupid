@@ -4,7 +4,6 @@ extends Node2D
 
 func _ready() -> void:
 	GlobalManager.audio_manager.play_menu_music()
-
 	
 func _on_play_button_pressed() -> void:
 	#print("Game started")
@@ -16,9 +15,6 @@ func _on_play_button_pressed() -> void:
 		node.show_heart_button()
 	
 	get_tree().change_scene_to_file("res://scenes/Pantalla0_Inicio.tscn")
-
-#func _on_quit_button_pressed() -> void:
-	#get_tree().quit()
 
 func _on_credits_button_pressed() -> void:
 	GlobalManager.audio_manager.play_game_click_sfx()

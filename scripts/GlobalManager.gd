@@ -11,7 +11,6 @@ var main_character_edad = 0
 var inviteAccepted = false
 var match_messages = []
 var player_messages = []
-
 # scene
 var audio_manager = null
 
@@ -26,3 +25,14 @@ func _ready():
 # Helper
 func create_timer(timeInSeconds: float):
 	return get_tree().create_timer(timeInSeconds).timeout
+
+func reset_player_data():
+	main_character_intereses.clear()
+	main_character_nombre = ""
+	main_character_edad = 0
+	inviteAccepted = false
+	match_messages.clear()
+	player_messages.clear()
+	
+	if audio_manager:
+		audio_manager.stop_all()
